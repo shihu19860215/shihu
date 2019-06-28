@@ -23,7 +23,13 @@ public class BxPdf {
                     str = strs[20].split(" ")[0];
                     if (str.length() < 16) {
                         str = strs[21].split(" ")[0];
-                        cjh = str;
+                        if(str.length() < 16){
+                            str = strs[22];
+                            str = str.split(" ")[0].split("/")[1];
+                            cjh = str;
+                        }else {
+                            cjh = str;
+                        }
                     } else {
                         cjh = str;
                     }
