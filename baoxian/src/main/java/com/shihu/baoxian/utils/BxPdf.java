@@ -15,6 +15,11 @@ public class BxPdf {
         for(int i = 0; i < strs.length; ++i) {
             if (strs[i].indexOf("保险单号") >= 0) {
                 str = strs[i].split(" ")[1].replace("\r", "");
+                if(str.length()<10){
+                    str = strs[i];
+                    str = str.substring(str.indexOf("保险单号"));
+                    str = str.split(" ")[1].replace("\r", "");
+                }
                 dh = str;
                 System.out.println(dh);
             } else if (strs[i].indexOf("车架号") >= 0) {
